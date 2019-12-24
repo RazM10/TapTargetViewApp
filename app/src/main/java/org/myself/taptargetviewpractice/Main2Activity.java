@@ -25,14 +25,15 @@ public class Main2Activity extends AppCompatActivity {
                 .targets(
                         TapTarget.forView(btn1, "Button 1", "Button Description.")
                                 .outerCircleColor(R.color.colorAccent)
-                                .cancelable(false)
+                                .tintTarget(true)
                                 .targetCircleColor(R.color.colorWhite)
                                 .transparentTarget(true),
                         TapTarget.forView(btn2, "Button 2", "Button Description.")
                                 .outerCircleColor(R.color.colorPrimary)
-                                .cancelable(false)
+                                .tintTarget(true)
+                                .transparentTarget(true)
                 )
-                .listener(new TapTargetSequence.Listener() {
+                .continueOnCancel(true).considerOuterCircleCanceled(true).listener(new TapTargetSequence.Listener() {
                     @Override
                     public void onSequenceFinish() {
                         Toast.makeText(Main2Activity.this, "View Finish", Toast.LENGTH_SHORT).show();
