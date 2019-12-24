@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
@@ -40,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         btn_show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(),));
+                startActivity(new Intent(MainActivity.this,Main2Activity.class));
+                Toast.makeText(MainActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }
